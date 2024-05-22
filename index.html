@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header container">
+        <div class="header__logo">
+          <h1 class="header__logo-name">bookshop</h1>
+        </div>
+        <div class="header__nav">
+          <ul class="header__nav-list">
+            <li><a class="header__nav-link active" href="#">books</a></li>
+            <li><a class="header__nav-link" href="#">audiobooks</a></li>
+            <li><a class="header__nav-link" href="#">Stationery & gifts</a></li>
+            <li><a class="header__nav-link" href="#">blog</a></li>
+          </ul>
+        </div>
+        <div class="header__menu">
+          <button disabled="disabled">
+            <img src="./src/assets/user.svg" alt="user" />
+          </button>
+          <button disabled="disabled">
+            <img src="./src/assets/search.svg" alt="search" />
+          </button>
+          <button disabled="disabled">
+            <img src="./src/assets/cart.svg" alt="cart" />
+          </button>
+        </div>
+      </header>
+      <main class="main container">
+        <section class="main__news">
+          <div class="main__slider">
+            <div class="main__news-info slides active">
+              <div class="main__news-heading">
+                <h2>Black friday sale</h2>
+              </div>
+              <div class="main__news-sale">
+                <h3>up to</h3>
+                <p>60%</p>
+              </div>
+              <div class="main__news-nav1">
+                <h1>Change old book on new</h1>
+                <img src="./src/assets/arrow2.svg" alt="arrow" />
+              </div>
+              <div class="main__news-nav2">
+                <h1>top 100 books 2022</h1>
+                <img src="./src/assets/arrow2.svg" alt="arrow" />
+              </div>
+              <img
+                class="main__news-image"
+                src="./src/assets/people.png"
+                alt="people"
+              />
+            </div>
+            <div class="main__news-info2 slides">
+              <div class="main__news-heading2">
+                <h1>for entrepreneurs</h1>
+              </div>
+              <div class="main__news-top">
+                <h2>top</h2>
+                <div class="main__news-top__text">
+                  <p>10</p>
+                  <h2>books</h2>
+                </div>
+              </div>
+            </div>
+            <div class="main__news-info3 slides">
+              <div class="main__news-heading3">
+                <h1>Check out</h1>
+                <h2>OUR cozy books Selection</h2>
+              </div>
+            </div>
+          </div>
+          <div class="main__news-arrows">
+            <svg
+              class="main__news-arrow active"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="6" cy="6" r="6" fill="#EFEEF6" />
+            </svg>
+            <svg
+              class="main__news-arrow"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="6" cy="6" r="6" fill="#EFEEF6" /></svg
+            ><svg
+              class="main__news-arrow"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="6" cy="6" r="6" fill="#EFEEF6" />
+            </svg>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
