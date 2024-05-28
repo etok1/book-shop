@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="container">
       <header class="header container">
         <div class="header__logo">
           <h1 class="header__logo-name">bookshop</h1>
@@ -28,8 +28,9 @@
           <button disabled="disabled">
             <img src="./src/assets/search.svg" alt="search" />
           </button>
-          <button disabled="disabled">
+          <button class="header__menu-cart" disabled="disabled">
             <img src="./src/assets/cart.svg" alt="cart" />
+            <span class="header__count">0</span>
           </button>
         </div>
       </header>
@@ -109,8 +110,32 @@
             </svg>
           </div>
         </section>
+        <section class="main__books">
+          <div class="main__books-sorting">
+            <ul>
+              <li class="main__books-genre active">Architecture</li>
+              <li class="main__books-genre">Art & Fashion</li>
+              <li class="main__books-genre">Biography</li>
+              <li class="main__books-genre">Business</li>
+              <li class="main__books-genre">Crafts & Hobbies</li>
+              <li class="main__books-genre">Drama</li>
+              <li class="main__books-genre">Fiction</li>
+              <li class="main__books-genre">Food & Drink</li>
+              <li class="main__books-genre">Health & Wellbeing</li>
+              <li class="main__books-genre">History & Politics</li>
+              <li class="main__books-genre">Humor</li>
+              <li class="main__books-genre">Poetry</li>
+              <li class="main__books-genre">Psychology</li>
+              <li class="main__books-genre">Science</li>
+              <li class="main__books-genre">Technology</li>
+              <li class="main__books-genre">Travel & Maps</li>
+            </ul>
+          </div>
+          <div class="main__books-options"></div>
+        </section>
       </main>
     </div>
+    <!-- <script type="" src="./src/js/constants.js"></script> -->
     <script type="module" src="./index.js"></script>
   </body>
 </html>

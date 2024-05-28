@@ -1,5 +1,5 @@
 // section 1
-const sliderSection = document.querySelector(".main__slider");
-const slides = document.querySelectorAll(".slides");
-const allSlides = slides.length;
-let activeSlide = 0;
+export const sliderSection = document.querySelector(".main__slider");
+export const slides = document.querySelectorAll(".slides");
+export const arrows = document.querySelectorAll(".main__news-arrow");
+export const allSlides = slides.length;
