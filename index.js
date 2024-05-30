@@ -1,5 +1,5 @@
 import { slides, arrows, allSlides } from "./src/js/constants.js";
-import { urlApi, renderCards } from "./src/js/fetchData.js";
+import { urlApi } from "./src/js/fetchData.js";
 // import { getBooks } from "./src/js/saving.js";
 // import styles from "./src/css/styles.css";
 
@@ -16,8 +16,8 @@ function automaticSlider() {
     }
     slides[activeSlide].classList.add("active");
     arrows[activeSlide].classList.add("active");
-  }, 3000);
+  }, 5000);
 }
 
 automaticSlider();
-// renderCards();
+//
