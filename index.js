@@ -1,12 +1,22 @@
 import { slides, arrows, allSlides } from "./src/js/constants.js";
 import { urlApi } from "./src/js/fetchData.js";
-// import { getBooks } from "./src/js/saving.js";
-// import styles from "./src/css/styles.css";
 
 console.log("API URL:", urlApi);
+let activeSlide = 0;
 
 function automaticSlider() {
-  let activeSlide = 0;
+  arrows.forEach((arrow, index) => {
+    arrow.addEventListener("click", () => {
+      slides[activeSlide].classList.remove("active");
+      arrows[activeSlide].classList.remove("active");
+
+      activeSlide = index;
+
+      arrows[activeSlide].classList.add("active");
+      slides[activeSlide].classList.add("active");
+    });
+  });
+
   setInterval(() => {
     slides[activeSlide].classList.remove("active");
     arrows[activeSlide].classList.remove("active");
@@ -14,10 +24,10 @@ function automaticSlider() {
     if (activeSlide === allSlides) {
       activeSlide = 0;
     }
+
     slides[activeSlide].classList.add("active");
     arrows[activeSlide].classList.add("active");
   }, 5000);
 }
 
 automaticSlider();
-//
