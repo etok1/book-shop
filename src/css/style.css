@@ -61,7 +61,8 @@
 }
 
 .header__nav-link {
-  font-size: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
   color: var(--dark-grey);
   font-weight: bold;
   transition: color 0.3s ease-in-out;

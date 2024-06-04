@@ -39,6 +39,5 @@ export function getBooks() {
   });
 
   addToCart();
-
   console.log("from local storage rendered");
 }

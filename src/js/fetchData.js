@@ -92,21 +92,56 @@ export function increaseCount() {
   console.log(countSaved);
 }
 
+function decreaseCount() {
+  const countSpan = document.querySelector(".header__count");
+  let countSaved = parseInt(localStorage.getItem("count"));
+  countSaved--;
+  countSpan.style.display = "flex";
+  countSpan.textContent = countSaved;
+  saveCount(countSaved);
+  console.log(countSaved);
+}
+export function removeFromCart(id) {
+  const index = cart.indexOf(id);
+  if (index > -1) {
+    cart.splice(index, 1);
+    saveCart(cart);
+  }
+}
 export function addToCart() {
   const toCartBtn = document.querySelectorAll(".main__books-btn");
+
   toCartBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".main__books-option");
-      console.log(card);
-      increaseCount();
-      console.log("clicked");
-      btn.classList.add("clicked");
-      btn.textContent = "in the cart";
-
       const id = card.dataset.id;
-      cart.push(id);
-      saveCart(cart);
+      if (btn.textContent === "buy now") {
+        console.log(card);
+
+        increaseCount();
+        console.log("clicked");
+        btn.classList.add("clicked");
+        btn.textContent = "in the cart";
+
+        cart.push(id);
+        saveCart(cart);
+      } else if (btn.textContent === "in the cart") {
+        decreaseCount();
+        console.log("clicked 1");
+        btn.classList.remove("clicked");
+        btn.textContent = "buy now";
+
+        removeFromCart(id);
+      }
     });
+  });
+}
+
+function loadMore() {
+  const btns = document.querySelector(".main__books-load-btn");
+
+  btns.addEventListener("click", () => {
+    renderCards();
   });
 }
 
@@ -163,16 +198,8 @@ export async function renderCards() {
     console.log(books);
     booksContainer.append(bookCard.render());
   });
-
   addToCart();
-}
-
-function loadMore() {
-  const btns = document.querySelector(".main__books-load-btn");
-
-  btns.addEventListener("click", () => {
-    renderCards();
-  });
+  loadMore();
 }
 
 const checkBooksString = localStorage.getItem("books");
@@ -180,11 +207,13 @@ const checkBooks = checkBooksString ? JSON.parse(checkBooksString) : [];
 
 if (checkBooks.length === 0) {
   await renderCards();
-  loadMore();
+
   filter();
+
   console.log("NOT from local storage rendered");
 } else {
   getBooks();
+
   filter();
   loadMore();
 }
